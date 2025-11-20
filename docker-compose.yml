@@ -1,0 +1,18 @@
+version: '3.1'
+services:
+  db:
+    image: mysql:8.0
+    container_name: movie_mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: moviesdb
+      MYSQL_USER: user
+      MYSQL_PASSWORD: pass
+    ports:
+      - "3306:3306"
+    command: --default-authentication-plugin=mysql_native_password
+    healthcheck:
+      test: ["CMD", "mysqladmin" ,"ping","-u","root","-proot"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
