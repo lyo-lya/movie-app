@@ -8,11 +8,10 @@ import java.util.Properties;
 
 public class EmailSender {
 
-    // Настройки SMTP сервера — измените на свои
     private static final String SMTP_HOST = "smtp.gmail.com";
     private static final int SMTP_PORT = 587;
     private static final String USERNAME = "lyolya.private@gmail.com";
-    private static final String PASSWORD = "kgrkseckqhtgixmc";
+    private static final String PASSWORD = ""; // не забыть добавить
 
     public static void send(String toEmail, String subject, String body) {
         Properties props = new Properties();
